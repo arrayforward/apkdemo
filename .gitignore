@@ -13,6 +13,7 @@ cloud_gateway/build/
 *.gcno
 *.gcda
 .opencode/node_modules/
+examples/goldieos/tools/
 **/.gradle/
 **/local.properties
 **/build/
