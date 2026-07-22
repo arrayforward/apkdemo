@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_button"
+        app:title="@string/title_main"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/entry_ai"
+                style="@style/EntryCard">
+                <ImageView
+                    style="@style/EntryIcon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_ai" />
+                <LinearLayout style="@style/EntryTextCol">
+                    <TextView style="@style/EntryTitle" android:text="@string/entry_ai" />
+                    <TextView style="@style/EntrySubtitle" android:text="形象 · 音色 · 个性 · 关系" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/entry_volume"
+                style="@style/EntryCard">
+                <ImageView
+                    style="@style/EntryIcon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_volume" />
+                <LinearLayout style="@style/EntryTextCol">
+                    <TextView style="@style/EntryTitle" android:text="@string/entry_volume" />
+                    <TextView style="@style/EntrySubtitle" android:text="系统音量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/entry_sle"
+                style="@style/EntryCard">
+                <ImageView
+                    style="@style/EntryIcon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_sle" />
+                <LinearLayout style="@style/EntryTextCol">
+                    <TextView style="@style/EntryTitle" android:text="@string/entry_sle" />
+                    <TextView style="@style/EntrySubtitle" android:text="星闪近场连接" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/entry_wifi"
+                style="@style/EntryCard">
+                <ImageView
+                    style="@style/EntryIcon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_wifi" />
+                <LinearLayout style="@style/EntryTextCol">
+                    <TextView style="@style/EntryTitle" android:text="@string/entry_wifi" />
+                    <TextView style="@style/EntrySubtitle" android:text="WiFi 网络" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/entry_server"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/entry_server"
+                app:icon="@drawable/ic_server"
+                app:iconGravity="textStart"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

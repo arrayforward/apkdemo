@@ -12,3 +12,7 @@ cloud_gateway/build/
 *.dylib
 *.gcno
 *.gcda
+.opencode/node_modules/
+**/.gradle/
+**/local.properties
+**/build/

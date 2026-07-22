@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hand-drawn cartoon female avatar (vector).
+  Replaces the ugly upscaled 152x136 RGB565 PNG that came from the
+  embedded goldieos UI. Stays within the original 152x136 logical frame
+  so the AI settings layout is unchanged.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="152dp"
+    android:height="136dp"
+    android:viewportWidth="152"
+    android:viewportHeight="136">
+
+    <!-- Soft pastel rounded background -->
+    <path
+        android:fillColor="#FFFCE3EE"
+        android:pathData="M8,0h136a8,8 0 0 1 8,8v120a8,8 0 0 1 -8,8h-136a8,8 0 0 1 -8,-8v-120a8,8 0 0 1 8,-8z" />
+
+    <!-- Shoulders / blouse (lavender) -->
+    <path
+        android:fillColor="#FFA991D8"
+        android:pathData="M30,136 C30,112 48,96 76,96 C104,96 122,112 122,136 Z" />
+
+    <!-- Collar bow (pink) -->
+    <path
+        android:fillColor="#FFE84A8A"
+        android:pathData="M76,114 L60,120 L60,128 L76,124 L92,128 L92,120 Z" />
+    <path
+        android:fillColor="#FFC2185B"
+        android:pathData="M74,122 L78,122 L78,128 L74,128 Z" />
+
+    <!-- Neck -->
+    <path
+        android:fillColor="#FFFAD7BD"
+        android:pathData="M64,98 L64,112 L88,112 L88,98 Z" />
+
+    <!-- Head/face circle -->
+    <path
+        android:fillColor="#FFFAD7BD"
+        android:pathData="M76,24 m-38,0 a38,40 0 1,0 76,0 a38,40 0 1,0 -76,0" />
+
+    <!-- Hair: long brown side -->
+    <path
+        android:fillColor="#FF3D2914"
+        android:pathData="M40,30 C36,18 50,4 76,4 C102,4 116,18 112,30 L112,60 L108,46 C100,52 92,52 76,52 C60,52 52,52 44,46 L44,60 Z" />
+
+    <!-- Hair side bangs framing face -->
+    <path
+        android:fillColor="#FF3D2914"
+        android:pathData="M40,30 L36,80 L46,80 L48,40 Z" />
+    <path
+        android:fillColor="#FF3D2914"
+        android:pathData="M112,30 L116,80 L106,80 L104,40 Z" />
+
+    <!-- Eyebrows -->
+    <path
+        android:fillColor="#FF3D2914"
+        android:pathData="M58,46 h12 v2 h-12 z" />
+    <path
+        android:fillColor="#FF3D2914"
+        android:pathData="M82,46 h12 v2 h-12 z" />
+
+    <!-- Eyes (closed-smile curves) -->
+    <path
+        android:strokeColor="#FF2A1810"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M58,56 q6,-4 12,0" />
+    <path
+        android:strokeColor="#FF2A1810"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M82,56 q6,-4 12,0" />
+
+    <!-- Cheeks blush -->
+    <path
+        android:fillColor="#FFF8B7C8"
+        android:pathData="M52,68 m-6,0 a6,4 0 1,0 12,0 a6,4 0 1,0 -12,0" />
+    <path
+        android:fillColor="#FFF8B7C8"
+        android:pathData="M88,68 m-6,0 a6,4 0 1,0 12,0 a6,4 0 1,0 -12,0" />
+
+    <!-- Smile -->
+    <path
+        android:strokeColor="#FF6E2A3A"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M68,76 q8,6 16,0" />
+</vector>

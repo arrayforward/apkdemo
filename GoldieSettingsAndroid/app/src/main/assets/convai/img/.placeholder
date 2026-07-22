@@ -1,0 +1,5 @@
+# This directory is required by the build system (asset/).
+# Real image assets live in `app/src/main/res/drawable/` as PNG files.
+# They were converted from the original goldieos RGB565 .h files via
+# `tools/img2png.js` and copied into res/drawable/ so that R.drawable.rgb16_xxx
+# resources are generated.

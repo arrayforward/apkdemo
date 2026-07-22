@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hand-drawn cartoon male avatar (vector). Replaces the upscaled RGB565 PNG.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="152dp"
+    android:height="136dp"
+    android:viewportWidth="152"
+    android:viewportHeight="136">
+
+    <!-- Background -->
+    <path
+        android:fillColor="#FFE3EEFC"
+        android:pathData="M8,0h136a8,8 0 0 1 8,8v120a8,8 0 0 1 -8,8h-136a8,8 0 0 1 -8,-8v-120a8,8 0 0 1 8,-8z" />
+
+    <!-- Shoulders / shirt (teal) -->
+    <path
+        android:fillColor="#FF3C8D8E"
+        android:pathData="M30,136 C30,112 48,96 76,96 C104,96 122,112 122,136 Z" />
+
+    <!-- Tie (red) -->
+    <path
+        android:fillColor="#FFCB2C2C"
+        android:pathData="M76,108 L70,120 L76,132 L82,120 Z" />
+
+    <!-- Neck -->
+    <path
+        android:fillColor="#FFFAD7BD"
+        android:pathData="M64,98 L64,112 L88,112 L88,98 Z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#FFFAD7BD"
+        android:pathData="M76,24 m-38,0 a38,40 0 1,0 76,0 a38,40 0 1,0 -76,0" />
+
+    <!-- Hair (short black) -->
+    <path
+        android:fillColor="#FF1B1B1B"
+        android:pathData="M40,38 C38,18 56,4 76,4 C96,4 114,18 112,38 L112,40 C108,32 96,30 76,30 C56,30 44,32 40,40 Z" />
+
+    <!-- Eyebrows (slightly thicker) -->
+    <path
+        android:fillColor="#FF1B1B1B"
+        android:pathData="M56,44 h14 v3 h-14 z" />
+    <path
+        android:fillColor="#FF1B1B1B"
+        android:pathData="M82,44 h14 v3 h-14 z" />
+
+    <!-- Eyes (open dots) -->
+    <path
+        android:fillColor="#FF1B1B1B"
+        android:pathData="M62,58 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+    <path
+        android:fillColor="#FF1B1B1B"
+        android:pathData="M90,58 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+
+    <!-- Cheeks -->
+    <path
+        android:fillColor="#FFF8B7C8"
+        android:pathData="M52,68 m-6,0 a6,4 0 1,0 12,0 a6,4 0 1,0 -12,0" />
+    <path
+        android:fillColor="#FFF8B7C8"
+        android:pathData="M88,68 m-6,0 a6,4 0 1,0 12,0 a6,4 0 1,0 -12,0" />
+
+    <!-- Slight smile -->
+    <path
+        android:strokeColor="#FF6E2A3A"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M68,76 q8,4 16,0" />
+</vector>

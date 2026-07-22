@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Color palette — matched to the original RGB565 embedded UI. -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Surfaces. -->
+    <color name="bg_window">#FFFFFFFF</color>          <!-- main window background -->
+    <color name="bg_card">#FFF0F8FB</color>            <!-- soft sky-blue card -->
+    <color name="bg_card_pressed">#FFD9ECF4</color>
+    <color name="bg_edit">#FFFFFFAF</color>            <!-- 0xFFAF apikey field -->
+    <color name="bg_button">#FF3F8F03</color>          <!-- 0x3F03 deep green -->
+    <color name="bg_button_wifi">#FFFD873F</color>      <!-- 0xFD87 orange -->
+    <color name="bg_button_cancel">#FF4C6B7F</color>    <!-- 0x4C6B grey -->
+    <color name="bg_button_alt">#FF9AD6E7</color>       <!-- 0x9AD6 lavender -->
+    <color name="bg_button_alt2">#FFBAD6E7</color>     <!-- 0xBAD6 beige -->
+    <color name="bg_button_cancel2">#FF55AD7F</color>   <!-- 0x55AD sage -->
+
+    <!-- Divider / outline. -->
+    <color name="card_outline">#FF7BB6CC</color>
+
+    <!-- Title bars. -->
+    <color name="title_bar">#FF000000</color>          <!-- 0x0000 -->
+    <color name="title_text">#FFFFFFFF</color>
+
+    <!-- Talk page. -->
+    <color name="talk_bg">#FF000000</color>
+    <color name="talk_text">#FFFFFFFF</color>
+    <color name="talk_panel">#FF000000</color>
+
+    <!-- Status indicators. -->
+    <color name="status_idle">#FF1082A4</color>         <!-- 0x1082 dark blue -->
+    <color name="status_listening">#FF041080</color>     <!-- 0x0410 deep green -->
+    <color name="status_thinking">#FFFCFC00</color>     <!-- 0xFC00 yellow -->
+    <color name="status_answering">#FF07E007</color>    <!-- 0x07E0 green -->
+    <color name="status_interrupted">#FFF80000</color>  <!-- 0xF800 red -->
+
+    <!-- Text. -->
+    <color name="text_primary">#FF111111</color>
+    <color name="text_secondary">#FF555555</color>
+    <color name="text_inverse">#FFFFFFFF</color>
+
+    <!-- List. -->
+    <color name="list_bg">#FFFFFFFF</color>
+    <color name="list_divider">#FFCCCCCC</color>
+    <color name="list_selected">#FFE6F4FA</color>
+</resources>

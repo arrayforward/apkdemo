@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_button"
+        app:title="@string/title_ai_settings"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#FFE3E8EC"
+                app:strokeWidth="0.5dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/btn_avatar"
+                            style="@style/AiRow">
+                            <ImageView style="@style/AiRowIcon" android:src="@drawable/ic_avatar" android:contentDescription="@null" />
+                            <TextView style="@style/AiRowText" android:text="@string/ai_avatar" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn_voice"
+                            style="@style/AiRow">
+                            <ImageView style="@style/AiRowIcon" android:src="@drawable/ic_voice" android:contentDescription="@null" />
+                            <TextView style="@style/AiRowText" android:text="@string/ai_voice" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn_person"
+                            style="@style/AiRow">
+                            <ImageView style="@style/AiRowIcon" android:src="@drawable/ic_personality" android:contentDescription="@null" />
+                            <TextView style="@style/AiRowText" android:text="@string/ai_personality" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn_relat"
+                            style="@style/AiRow">
+                            <ImageView style="@style/AiRowIcon" android:src="@drawable/ic_relationship" android:contentDescription="@null" />
+                            <TextView style="@style/AiRowText" android:text="@string/ai_relationship" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn_apikey"
+                            style="@style/AiRow">
+                            <ImageView style="@style/AiRowIcon" android:src="@drawable/ic_apikey" android:contentDescription="@null" />
+                            <TextView style="@style/AiRowText" android:text="@string/ai_apikey" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="152dp"
+                            android:layout_height="136dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#FFE3E8EC"
+                            app:strokeWidth="0.5dp">
+                            <ImageView
+                                android:id="@+id/img_avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@string/ai_avatar"
+                                android:scaleType="fitCenter"
+                                android:padding="4dp"
+                                android:src="@drawable/avatar_female" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/txt_avatar_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/avatar_female"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_talk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/ai_talk"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_status_conn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/status_idle"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="@string/ai_status_disconnected"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/txt_status_conv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/status_idle"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="@string/ai_conv_idle"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_engine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:text="启用 AI 对话服务"
+                android:textColor="@color/text_primary" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
