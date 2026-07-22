@@ -74,10 +74,10 @@ public final class Settings {
     public Settings setRelatIdx(int v) { sp.edit().putInt(KEY_RELAT_IDX, v).apply(); return this; }
     public Settings setApiKey(String v) { sp.edit().putString(KEY_API_KEY, v).apply(); return this; }
 
-    public String wsUrl()   { return sp.getString(KEY_WS_URL, "ws://192.168.1.10:9000/"); }
+    public String wsUrl()   { return sp.getString(KEY_WS_URL, "ws://10.0.2.2:9000"); }
     public String agentId() { return sp.getString(KEY_AGENT_ID, "your_agent_id"); }
     public String productId() { return sp.getString(KEY_PRODUCT_ID, "your_product_id"); }
-    public String productKey() { return sp.getString(KEY_PRODUCT_KEY, "your_product_key"); }
+    public String productKey() { return sp.getString(KEY_PRODUCT_KEY, "goldie-dev-key-2026"); }
     public String productSecret() { return sp.getString(KEY_PRODUCT_SECRET, "your_product_secret"); }
     public String deviceName() { return sp.getString(KEY_DEVICE_NAME, "android-client"); }
 

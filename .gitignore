@@ -16,4 +16,4 @@ cloud_gateway/build/
 examples/goldieos/tools/
 **/.gradle/
 **/local.properties
-**/build/
+**/build/__pycache__/
