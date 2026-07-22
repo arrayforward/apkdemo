@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.anomaly.goldiesettings.App;
+import com.anomaly.goldiesettings.BuildConfig;
 import com.anomaly.goldiesettings.R;
 import com.anomaly.goldiesettings.convai.ConvaiBridge;
 import com.anomaly.goldiesettings.convai.ConvaiEvent;
@@ -48,9 +49,20 @@ public class ServerConfigActivity extends AppCompatActivity {
                 .setProductKey(text(b.inputProductKey))
                 .setProductSecret(text(b.inputProductSecret))
                 .setDeviceName(text(b.inputDeviceName));
+            if (BuildConfig.DEBUG) {
+                s.setDebugWavInject(b.switchWavInject.isChecked());
+            }
             Toast.makeText(this, "已保存", Toast.LENGTH_SHORT).show();
             finish();
         });
+
+        // Debug-only WAV injection switch: hidden in release builds.
+        if (BuildConfig.DEBUG) {
+            b.switchWavInject.setVisibility(View.VISIBLE);
+            b.switchWavInject.setChecked(s.debugWavInject());
+            b.switchWavInject.setOnCheckedChangeListener((v, checked) ->
+                s.setDebugWavInject(checked));
+        }
 
         b.btnTest.setOnClickListener(v -> testConnect());
     }

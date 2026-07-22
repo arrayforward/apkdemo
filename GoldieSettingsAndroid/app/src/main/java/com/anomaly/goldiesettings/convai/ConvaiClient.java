@@ -231,10 +231,13 @@ public class ConvaiClient {
                 L.w(L.TAG_WS, "short audio frame (%d bytes)", data.length);
                 return;
             }
+            // Strip the 13-byte mini-header: the sink expects pure G.711A.
             int off = 13;
             int len = data.length - off;
+            byte[] payload = new byte[len];
+            System.arraycopy(data, off, payload, 0, len);
             Listener l = listener;
-            if (l != null) l.onBinaryAudio(h, data, data.length);
+            if (l != null) l.onBinaryAudio(h, payload, payload.length);
         }
 
         @Override public void onClosing(WebSocket webSocket, int code, String reason) {

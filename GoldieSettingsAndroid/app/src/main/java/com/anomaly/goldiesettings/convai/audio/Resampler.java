@@ -39,8 +39,10 @@ public final class Resampler {
         for (int i = 0; i < outSamples; i++) {
             int idx0 = i * 2;
             int idx1 = Math.min(idx0 + 1, inSamples - 1);
-            short s0 = src.getShort(idx0 * 2);
-            short s1 = src.getShort(idx1 * 2);
+            // NB: absolute ByteBuffer.getShort is array-relative, so inOff
+            // must be added explicitly (wrap() only sets position/limit).
+            short s0 = src.getShort(inOff + idx0 * 2);
+            short s1 = src.getShort(inOff + idx1 * 2);
             // Linear interpolation at fractional position 0.5 between s0 and s1
             int mixed = ((int) s0 + (int) s1) >> 1;
             dst.putShort((short) mixed);
@@ -67,10 +69,11 @@ public final class Resampler {
         for (int i = 0; i < outFrames; i++) {
             int idx0 = i * 4;        // L of frame 2i
             int idx1 = idx0 + 4;     // L of frame 2i+1
-            short l0 = src.getShort(idx0);
-            short r0 = src.getShort(idx0 + 2);
-            short l1 = src.getShort(idx1);
-            short r1 = src.getShort(idx1 + 2);
+            // NB: absolute ByteBuffer.getShort is array-relative; add inOff.
+            short l0 = src.getShort(inOff + idx0);
+            short r0 = src.getShort(inOff + idx0 + 2);
+            short l1 = src.getShort(inOff + idx1);
+            short r1 = src.getShort(inOff + idx1 + 2);
             int mixed0 = (((int) l0 + (int) r0) >> 1);
             int mixed1 = (((int) l1 + (int) r1) >> 1);
             short sample = (short) ((mixed0 + mixed1) >> 1);

@@ -34,6 +34,8 @@ public final class Settings {
     public static final String KEY_DEVICE_NAME   = "device_name";
 
     public static final String KEY_VOLUME        = "volume";          // 0..100
+    /** Debug-only: inject res/raw/test_voice.wav instead of mic audio. */
+    public static final String KEY_DEBUG_WAV_INJECT = "debug_wav_inject";
     public static final String KEY_WIFI_ON       = "wifi_on";
     public static final String KEY_WIFI_SSID     = "wifi_ssid";
     public static final String KEY_WIFI_PASS     = "wifi_pass";
@@ -100,6 +102,9 @@ public final class Settings {
 
     public int sleMode() { return sp.getInt(KEY_SLE_MODE, 0); }
     public Settings setSleMode(int v) { sp.edit().putInt(KEY_SLE_MODE, v).apply(); return this; }
+
+    public boolean debugWavInject() { return sp.getBoolean(KEY_DEBUG_WAV_INJECT, false); }
+    public Settings setDebugWavInject(boolean v) { sp.edit().putBoolean(KEY_DEBUG_WAV_INJECT, v).apply(); return this; }
 
     // ---------------------------------------------------------------------
     //  ConvAI config JSON (mirrors main_app.cpp::generate_convai_config_json)

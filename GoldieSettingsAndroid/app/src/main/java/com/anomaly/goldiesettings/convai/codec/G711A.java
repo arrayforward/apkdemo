@@ -4,8 +4,13 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
- * G.711 A-law codec (ITU-T G.711). 1:1 port of
- * {@code D:\vit\apkdemo\examples\goldieos\sdk_integration\convai_codec_g711a.c}.
+ * G.711 A-law codec (ITU-T G.711). Based on
+ * {@code D:\vit\apkdemo\examples\goldieos\sdk_integration\convai_codec_g711a.c},
+ * with the mantissa extraction in {@code pcm16ToAlaw} fixed to the ITU-T
+ * reference behaviour (encode∘decode is now the identity on all 256
+ * codewords, verified against CPython audioop.lin2alaw; the C original
+ * drops one bit for seg ≥ 1, which corrupts uplink audio and breaks the
+ * server AEC watermark loopback).
  *
  * <p>16-bit linear PCM (little-endian) ↔ 8-bit A-law byte stream.
  *
@@ -33,6 +38,7 @@ public final class G711A {
         if (pcmVal > 4095) pcmVal = 4095;
         if (pcmVal < 0) pcmVal = 4095;
 
+        int pcm13 = pcmVal;
         int seg = 0;
         if (pcmVal >= 32)  { seg = 1; pcmVal = (short) (pcmVal >> 1);
         if (pcmVal >= 32)  { seg = 2; pcmVal = (short) (pcmVal >> 1);
@@ -42,7 +48,10 @@ public final class G711A {
         if (pcmVal >= 32)  { seg = 6; pcmVal = (short) (pcmVal >> 1);
         if (pcmVal >= 32)  { seg = 7; pcmVal = (short) (pcmVal >> 1); }}}}}}}
 
-        int aval = (seg << 4) | ((pcmVal >> 1) & 0x0F);
+        // Quantisation bits are taken from the unshifted 13-bit magnitude:
+        // seg < 2 → (pcm >> 1) & 0xF, else (pcm >> seg) & 0xF (ITU-T G.711).
+        int aval = (seg << 4)
+            | (seg < 2 ? (pcm13 >> 1) & 0x0F : (pcm13 >> seg) & 0x0F);
         return (byte) ((aval ^ mask) & 0xFF);
     }
 

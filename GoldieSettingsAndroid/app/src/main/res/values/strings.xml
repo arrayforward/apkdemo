@@ -87,6 +87,7 @@
     <string name="server_test">测试连接</string>
     <string name="server_test_ok">服务器已响应</string>
     <string name="server_test_fail_fmt">连接失败:%s</string>
+    <string name="debug_wav_inject">调试：WAV 注入（不发麦克风）</string>
 
     <!-- Common. -->
     <string name="back">返回</string>
