@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Network for WebSocket. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- Android 8+ requires location permission to scan/connect WiFi. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Microphone for voice. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GoldieSettings"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.ServerConfigActivity"
+            android:exported="false"
+            android:label="@string/title_server_config"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.AiSettingsActivity"
+            android:exported="false"
+            android:label="@string/title_ai_settings"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.AiConfigListActivity"
+            android:exported="false"
+            android:label="@string/title_ai_config"
+            android:parentActivityName=".ui.AiSettingsActivity" />
+
+        <activity
+            android:name=".ui.TalkActivity"
+            android:exported="false"
+            android:label="@string/title_talk"
+            android:parentActivityName=".ui.AiSettingsActivity" />
+
+        <activity
+            android:name=".ui.WifiSettingsActivity"
+            android:exported="false"
+            android:label="@string/title_wifi"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.VolumeActivity"
+            android:exported="false"
+            android:label="@string/title_volume"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.SleSettingsActivity"
+            android:exported="false"
+            android:label="@string/title_sle"
+            android:parentActivityName=".ui.MainActivity" />
+    </application>
+</manifest>

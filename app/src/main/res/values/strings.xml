@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App identity. -->
+    <string name="app_name">系统设置</string>
+
+    <!-- Screen titles. -->
+    <string name="title_main">系统设置</string>
+    <string name="title_server_config">服务器配置</string>
+    <string name="title_ai_settings">AI 设置</string>
+    <string name="title_ai_config">AI 配置</string>
+    <string name="title_talk">对话</string>
+    <string name="title_wifi">WiFi 设置</string>
+    <string name="title_volume">音量设置</string>
+    <string name="title_sle">星闪连接</string>
+
+    <!-- Main screen entries. -->
+    <string name="entry_ai">AI 设置</string>
+    <string name="entry_volume">音量设置</string>
+    <string name="entry_sle">星闪连接</string>
+    <string name="entry_wifi">WiFi 设置</string>
+    <string name="entry_server">服务器</string>
+
+    <!-- AI settings page. -->
+    <string name="ai_avatar">形象</string>
+    <string name="ai_voice">音色</string>
+    <string name="ai_personality">个性</string>
+    <string name="ai_relationship">关系</string>
+    <string name="ai_apikey">APIKey</string>
+    <string name="ai_talk">对话</string>
+    <string name="ai_status_connected">● 已连接</string>
+    <string name="ai_status_disconnected">● 未连接</string>
+    <string name="ai_conv_idle">空闲</string>
+    <string name="ai_conv_listening">倾听中</string>
+    <string name="ai_conv_thinking">思考中</string>
+    <string name="ai_conv_answering">回答中</string>
+    <string name="ai_conv_interrupted">已打断</string>
+    <string name="ai_conv_finished">回答完毕</string>
+
+    <!-- AI avatar. -->
+    <string name="avatar_female">女性</string>
+    <string name="avatar_male">男性</string>
+
+    <!-- WiFi. -->
+    <string name="wifi_title">WiFi 设置</string>
+    <string name="wifi_switch_label">WiFi 开关</string>
+    <string name="wifi_ap_label">可用网络</string>
+    <string name="wifi_scan">正在扫描…</string>
+    <string name="wifi_empty">未找到网络，请先打开 WiFi</string>
+    <string name="wifi_password_dialog_title">输入密码</string>
+    <string name="wifi_password_hint">密码</string>
+    <string name="wifi_connect">确定</string>
+    <string name="wifi_cancel">取消</string>
+
+    <!-- Volume. -->
+    <string name="volume_hint">拖动调节系统音量</string>
+    <string name="volume_value_fmt">%d</string>
+
+    <!-- SLE. -->
+    <string name="sle_mode_master">主机模式</string>
+    <string name="sle_mode_slave">从机模式</string>
+    <string name="sle_pair_code_fmt">配对码:%d</string>
+    <string name="sle_local_addr_fmt">本机设备地址:%1$02X%2$02X%3$02X</string>
+    <string name="sle_local_addr_fail">地址: 获取失败</string>
+    <string name="sle_empty">未发现设备</string>
+    <string name="sle_pair_dialog_title">输入配对码</string>
+    <string name="sle_unpair">是否移除设备？</string>
+    <string name="sle_yes">确定</string>
+    <string name="sle_no">取消</string>
+
+    <!-- Talk page. -->
+    <string name="talk_idle">待机中....</string>
+    <string name="talk_listening">聆听中....</string>
+    <string name="talk_thinking">思考中....</string>
+    <string name="talk_answering">回答中....</string>
+    <string name="talk_interrupted">已打断</string>
+    <string name="talk_ready">准备中....</string>
+    <string name="talk_back">返回</string>
+
+    <!-- Server config. -->
+    <string name="server_url_hint">WebSocket URL (ws://host:port)</string>
+    <string name="server_agent_hint">agent_id</string>
+    <string name="server_product_id_hint">product_id</string>
+    <string name="server_product_key_hint">product_key</string>
+    <string name="server_product_secret_hint">product_secret</string>
+    <string name="server_device_name_hint">device_name</string>
+    <string name="server_save">保存</string>
+    <string name="server_test">测试连接</string>
+    <string name="server_test_ok">服务器已响应</string>
+    <string name="server_test_fail_fmt">连接失败:%s</string>
+
+    <!-- Common. -->
+    <string name="back">返回</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+
+    <!-- Voice presets. -->
+    <string-array name="avatar_options">
+        <item>女性</item>
+        <item>男性</item>
+    </string-array>
+
+    <string-array name="voice_female">
+        <item>温柔少女</item>
+        <item>害羞女孩</item>
+        <item>热心女孩</item>
+        <item>花甲奶奶</item>
+    </string-array>
+    <string-array name="voice_male">
+        <item>温润男声</item>
+        <item>搞笑大爷</item>
+        <item>嘴硬竹马</item>
+        <item>邻家弟弟</item>
+        <item>憨憨萌兽</item>
+        <item>机械战甲</item>
+    </string-array>
+    <string-array name="voice_female_type">
+        <item>Chinese (Mandarin)_Warm_Girl</item>
+        <item>Chinese (Mandarin)_BashfulGirl</item>
+        <item>Chinese (Mandarin)_Warm_HeartedGirl</item>
+        <item>Chinese (Mandarin)_Kind-hearted_Elder</item>
+    </string-array>
+    <string-array name="voice_male_type">
+        <item>Chinese (Mandarin)_Gentleman</item>
+        <item>Chinese (Mandarin)_Humorous_Elder</item>
+        <item>Chinese (Mandarin)_Stubborn_Friend</item>
+        <item>Chinese (Mandarin)_Pure-hearted_Boy</item>
+        <item>Chinese (Mandarin)_Cute_Spirit</item>
+        <item>Robot_Armor</item>
+    </string-array>
+
+    <string-array name="personality">
+        <item>温柔治愈</item>
+        <item>古灵精怪</item>
+        <item>聪明稳重</item>
+        <item>充满诗意</item>
+        <item>阳光满格</item>
+    </string-array>
+    <string-array name="personality_prompt">
+        <item>你是一个温柔又治愈的小伙伴，说话像棉花糖一样软乎乎的，总是耐心倾听小朋友的心事，用温暖的话语轻轻抚平小朋友的小情绪，还会贴心地陪在身边给予最安心的陪伴哦。</item>
+        <item>你是一个古灵精怪的小伙伴，说话像跳跳糖一样噼里啪啦充满惊喜，总爱用夸张的表情和搞笑的段子逗得小朋友哈哈大笑，让每一天都变成充满欢笑的奇妙冒险之旅！</item>
+        <item>你是一个聪明又稳重的小伙伴，说话清晰有条理，像小侦探一样带着小朋友一步步思考问题，用简单易懂的方式讲解道理，帮助小朋友养成爱动脑筋、独立解决困难的好习惯。</item>
+        <item>你是一个充满诗意的小伙伴，说话像优美的儿歌一样动听，喜欢用温柔的语调描绘花草星空，带着小朋友感受文字的美好，在故事与想象的世界里一起发现生活中藏着的浪漫。</item>
+        <item>你是一个阳光满格的小伙伴，说话像小太阳一样暖洋洋又充满力量，总在小朋友犹豫时大声加油打气，用满满的正能量鼓励小朋友勇敢迈出第一步，相信自己一定能做到！</item>
+    </string-array>
+
+    <string-array name="relationship_female">
+        <item>暖心大姐姐</item>
+        <item>温柔小老师</item>
+        <item>贴心小闺蜜</item>
+        <item>故事守护者</item>
+        <item>生活小向导</item>
+    </string-array>
+    <string-array name="relationship_male">
+        <item>暖心大哥哥</item>
+        <item>聪明小导师</item>
+        <item>酷酷小伙伴</item>
+        <item>冒险小队长</item>
+        <item>坚实守护者</item>
+    </string-array>
+    <string-array name="relationship_female_prompt">
+        <item>你现在扮演小朋友的暖心大姐姐，像亲姐姐一样温柔可靠，会耐心听小朋友分享秘密，用柔软的话语开导小朋友的小烦恼，陪小朋友做手工、看绘本，做小朋友最信赖的守护者和倾听者。</item>
+        <item>你现在扮演小朋友的温柔小老师，像幼儿园里最亲切的阿姨，会用生动有趣的方式讲解小知识，带着小朋友边玩边学，在耐心引导中让小朋友发现学习的乐趣，陪伴小朋友快乐成长。</item>
+        <item>你现在扮演小朋友的贴心小闺蜜，说话萌萌的又特别懂小朋友的心思，喜欢和小朋友分享小秘密、交换小心情，一起角色扮演、过家家，做永远站在小朋友这边的好朋友。</item>
+        <item>你现在扮演小朋友的故事守护者，像童话书里走出来的精灵姐姐，拥有讲不完的奇妙故事，会用温柔的声线把小朋友带入梦幻王国，在睡前轻声讲述美好的故事，守护小朋友的甜美梦乡。</item>
+        <item>你现在扮演小朋友的生活小向导，像细心的邻家姐姐一样体贴，会教小朋友整理小书包、认识新朋友，在生活中点点滴滴处给予温暖指引，帮助小朋友慢慢学会独立和照顾自己。</item>
+    </string-array>
+    <string-array name="relationship_male_prompt">
+        <item>你现在扮演小朋友的暖心大哥哥，像亲哥哥一样可靠又有担当，会陪小朋友搭积木、做运动，在小朋友遇到困难时挺身而出，用坚定的语气告诉小朋友：有哥哥在，什么都不怕。</item>
+        <item>你现在扮演小朋友的聪明小导师，像博学又有趣的叔叔，会用生活中的小例子讲解大道理，带着小朋友探索自然奥秘，在问答互动中激发小朋友的好奇心，做小朋友成长路上的引路人。</item>
+        <item>你现在扮演小朋友的酷酷小伙伴，说话风趣又接地气，喜欢和小朋友比赛跑步、分享小零食，平等地陪小朋友疯玩疯闹，做不摆架子、最懂小朋友快乐的好朋友。</item>
+        <item>你现在扮演小朋友的冒险小队长，像勇敢的探险家一样充满干劲，会带领小朋友开启想象的冒险旅程，鼓励小朋友勇敢尝试新事物，在挑战中一起发现成长的快乐和勇气的力量。</item>
+        <item>你现在扮演小朋友的坚实守护者，像可靠的邻家大哥哥一样让人安心，时刻关注小朋友的安全和情绪，在小朋友害怕时给予有力的拥抱，用沉稳的陪伴让小朋友感受到被保护的温暖。</item>
+    </string-array>
+</resources>
