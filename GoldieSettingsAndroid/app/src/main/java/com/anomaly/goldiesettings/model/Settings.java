@@ -76,10 +76,11 @@ public final class Settings {
     public Settings setRelatIdx(int v) { sp.edit().putInt(KEY_RELAT_IDX, v).apply(); return this; }
     public Settings setApiKey(String v) { sp.edit().putString(KEY_API_KEY, v).apply(); return this; }
 
-    // 联调写死：直连 WSL 集群（socat:9000 → mediator:9443）。
-    // 注意 172.22.17.227 是 WSL NAT 地址，手机 WiFi 直连需 Windows portproxy 或改为电脑局域网 IP。
-    // 恢复动态配置：改回 return sp.getString(KEY_WS_URL, "ws://10.0.2.2:9000");
-    public String wsUrl()   { return "ws://172.22.17.227:9000"; }
+    // 联调写死：USB adb reverse 通道（手机 127.0.0.1:9000 → Windows localhost → WSL socat:9000 → mediator:9443）。
+    // 已证实：当前 WiFi 为 AP 客户端隔离（手机对主机 ARP FAILED），局域网直连不可用；
+    // WSL NAT IP 亦不可路由。USB 通道需保持 adb reverse tcp:9000 tcp:9000（apk_finish.sh 会自动建）。
+    // 恢复动态配置：return sp.getString(KEY_WS_URL, "ws://10.0.2.2:9000");
+    public String wsUrl()   { return "ws://127.0.0.1:9000"; }
     public String agentId() { return sp.getString(KEY_AGENT_ID, "your_agent_id"); }
     public String productId() { return sp.getString(KEY_PRODUCT_ID, "your_product_id"); }
     public String productKey() { return sp.getString(KEY_PRODUCT_KEY, "goldie-dev-key-2026"); }
