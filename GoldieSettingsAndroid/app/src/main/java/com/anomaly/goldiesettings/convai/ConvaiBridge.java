@@ -115,7 +115,9 @@ public class ConvaiBridge implements ConvaiEngine.Handler {
             wmBuf.reset();
             mainHandler.postDelayed(wmTimeout, WM_TIMEOUT_MS);
         } else {
-            capture.start();
+            // Early attempt; the authoritative start is on CONNECTED
+            // (session established) so capture always precedes playback.
+            ensureCaptureStarted();
         }
     }
 
@@ -125,6 +127,7 @@ public class ConvaiBridge implements ConvaiEngine.Handler {
         mainHandler.removeCallbacks(wmTimeout);
         injector.stop();
         capture.stop();
+        captureStarted = false;
         engine.stop();
         player.drop();
     }
@@ -144,9 +147,15 @@ public class ConvaiBridge implements ConvaiEngine.Handler {
             mainHandler.removeCallbacks(wmTimeout);
             injector.stop();
             capture.stop();
+            captureStarted = false;
             player.drop();
         } else if (event == ConvaiEvent.CONNECTED) {
-            // Make sure playback is primed
+            // Session established (hello_ack), before any clip can arrive:
+            // start mic capture FIRST so the server AEC watermark is
+            // recorded from its very first pulse, then prime playback.
+            // Capture failure (e.g. permission not granted) is degraded,
+            // never fatal: connection and playback continue without mic.
+            if (!wavInjectEnabled()) ensureCaptureStarted();
             if (player != null) player.start();
         }
         if (listener != null) listener.onEvent(event, details);
@@ -188,13 +197,14 @@ public class ConvaiBridge implements ConvaiEngine.Handler {
                             clipIdx, clipFrames, clipBytes);
                         clipFrames = 0;
                     }
-                } else if (!captureStarted() && engine.isStarted()) {
-                    capture.start();
+                } else if (engine.isStarted()) {
+                    ensureCaptureStarted();
                 }
                 break;
             case IDLE:
                 injector.stop();
                 capture.stop();
+                captureStarted = false;
                 player.drop();
                 break;
             default: break;
@@ -203,7 +213,16 @@ public class ConvaiBridge implements ConvaiEngine.Handler {
     }
 
     private boolean captureStarted;
-    private boolean captureStarted() { return captureStarted; }
+
+    /** Idempotent mic start; records success so retries don't spam the log. */
+    private void ensureCaptureStarted() {
+        if (captureStarted) return;
+        captureStarted = capture.start();
+        if (!captureStarted) {
+            L.w(L.TAG_AUDIO,
+                "capture unavailable (permission or device), continuing without mic");
+        }
+    }
 
     // Debug wav-inject observability: per-clip (AudioOp START..END) counters.
     private int clipIdx;
