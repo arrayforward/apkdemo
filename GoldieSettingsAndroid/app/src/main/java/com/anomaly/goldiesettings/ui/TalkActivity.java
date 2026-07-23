@@ -49,6 +49,12 @@ public class TalkActivity extends AppCompatActivity implements ConvaiBridge.List
         bridge = App.get().bridge();
         bridge.setListener(this);
 
+        // Seed the UI from the engine's CURRENT status: the engine may
+        // already be LISTENING (started from the AI-settings page) long
+        // before this activity is opened; onStatus alone would leave the
+        // page stuck on the layout default ("准备中") forever.
+        onStatus(bridge.engine().status());
+
         b.btnBack.setOnClickListener(v -> finish());
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
@@ -89,6 +95,8 @@ public class TalkActivity extends AppCompatActivity implements ConvaiBridge.List
     @Override protected void onResume() {
         super.onResume();
         if (running) b.avatarView.setRunning(true);
+        // Re-seed in case the engine status changed while we were paused.
+        onStatus(bridge.engine().status());
     }
 
     @Override protected void onDestroy() {
