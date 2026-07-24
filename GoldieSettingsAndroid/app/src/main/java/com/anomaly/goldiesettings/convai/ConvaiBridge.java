@@ -181,8 +181,8 @@ public class ConvaiBridge implements ConvaiEngine.Handler {
                 break;
             case INTERRUPTED:
                 if (player != null) player.drop();
-                // also signal server to drop buffered audio
-                engine.sendAudioCancel();
+                // 服务端发起的打断：只清本地缓冲，不回送 cancel——否则服务端
+                // 会把它当成第二次打断，把刚提交的新语句流水线判死（无回复）
                 break;
             case LISTENING:
                 if (wavInjectEnabled()) {
